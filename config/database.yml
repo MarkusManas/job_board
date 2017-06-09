@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  host: localhost
+  username: pguser
+  password: pguser
+  database: jobBoard
+
+test:
+  <<: *default
+  database: jobBoard_test
+
+production:
+  <<: *default
+  database: jobBoard_production
